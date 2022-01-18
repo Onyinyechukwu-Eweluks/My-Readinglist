@@ -23,7 +23,7 @@ const RootQuery = new GraphQLObjectType({
       async resolve(parent, args) {
         //code to get data from db/other source
         // return _.find(books, { id: args.id });
-        let book = await Books.find({ _id: args.id });
+        let book = await Books.findById({ _id: args.id });
         return book;
       },
     },
